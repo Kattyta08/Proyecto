@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteTransferencias" language="groovy" pageWidth="974" pageHeight="619" orientation="Landscape" columnWidth="934" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="928c22b6-38ad-4478-a811-3766eac54570">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1"/>
+	<queryString>
+		<![CDATA[SELECT
+     transferencia."fecha" AS transferencia_fecha,
+     transferencia."modo_transferencia" AS transferencia_modo_transferencia,
+     transferencia."equipo_transferencia" AS transferencia_equipo_transferencia,
+     transferencia."descripcion" AS transferencia_descripcion,
+     transferencia."cotizacion" AS transferencia_cotizacion,
+     transferencia."porcentaje" AS transferencia_porcentaje,
+     jugador."nombres" AS jugador_nombres,
+     jugador."apellidos" AS jugador_apellidos,
+     jugador."posicion" AS jugador_posicion,
+     jugador."cedula" AS jugador_cedula
+FROM
+     "public"."jugador" jugador INNER JOIN "public"."transferencia" transferencia ON jugador."id_jugador" = transferencia."id_jugador"]]>
+	</queryString>
+	<field name="transferencia_fecha" class="java.sql.Date"/>
+	<field name="transferencia_modo_transferencia" class="java.lang.String"/>
+	<field name="transferencia_equipo_transferencia" class="java.lang.String"/>
+	<field name="transferencia_descripcion" class="java.lang.String"/>
+	<field name="transferencia_cotizacion" class="java.math.BigDecimal"/>
+	<field name="transferencia_porcentaje" class="java.lang.Integer"/>
+	<field name="jugador_nombres" class="java.lang.String"/>
+	<field name="jugador_apellidos" class="java.lang.String"/>
+	<field name="jugador_posicion" class="java.lang.String"/>
+	<field name="jugador_cedula" class="java.lang.Integer"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="-20" width="954" height="92" backcolor="#006699" uuid="6817fa3a-b413-4970-be14-80cd9cda3baf"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="278fbefc-03c6-4a72-9067-977e3a7be363"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="35" width="215" height="28" forecolor="#FFFFFF" uuid="95ff0895-e983-4832-95a0-15b6f08fc8ab"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Listado de Transferencias]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="dfb1aa6f-5dd1-4015-9788-afc3ec264868"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="100" height="20" uuid="0470062f-8a04-4ef8-9c2b-f90ce8b24a83"/>
+				<text><![CDATA[transferencia_fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="1" width="100" height="20" uuid="59dc0892-3f84-4900-afd8-5d13f71ceeab"/>
+				<text><![CDATA[transferencia_modo_transferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="834" y="1" width="100" height="20" uuid="d5fd9dc7-bffa-4ebe-a3de-16583284a9c2"/>
+				<text><![CDATA[transferencia_cotizacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="731" y="1" width="100" height="20" uuid="7197c625-e78b-46e3-8899-9b143536d833"/>
+				<text><![CDATA[transferencia_porcentaje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="0" width="100" height="20" uuid="edf10bae-e161-4722-9c5c-fb5a0fb4db43"/>
+				<text><![CDATA[jugador_cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="0" width="100" height="20" uuid="bcc9ecb4-e79a-4f0a-9c80-d192730672e9"/>
+				<text><![CDATA[jugador_nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="617" y="1" width="100" height="20" uuid="dd4bf868-3334-4b65-b095-223f66ae0e4e"/>
+				<text><![CDATA[transferencia_equipo_transferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="0" width="100" height="20" uuid="7eb73aa3-370d-4dbd-884d-a76b412dca02"/>
+				<text><![CDATA[jugador_apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="0" width="100" height="20" uuid="2f2cd5c2-87a4-4984-9c63-258c44b72a04"/>
+				<text><![CDATA[jugador_posicion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="fc4225f3-2948-4618-b123-76a4f61b68b3"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b8daeb71-4704-4c11-97ab-88762acf719b"/>
+				<textFieldExpression><![CDATA[$F{transferencia_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="100" height="20" uuid="631d87f0-489d-48d2-b649-c30a2ea9fab7"/>
+				<textFieldExpression><![CDATA[$F{transferencia_modo_transferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="834" y="0" width="100" height="20" uuid="fed2db2f-9f7b-4e61-bfbe-c8967eaf3ff6"/>
+				<textFieldExpression><![CDATA[$F{transferencia_cotizacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="731" y="0" width="100" height="20" uuid="50b1267d-d1b6-482f-937d-74cfcacf66ff"/>
+				<textFieldExpression><![CDATA[$F{transferencia_porcentaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="0" width="100" height="20" uuid="07473008-a0fb-4194-9d28-58257b228c79"/>
+				<textFieldExpression><![CDATA[$F{jugador_cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="100" height="20" uuid="7359def3-96b8-49bb-bb63-b1888046adf7"/>
+				<textFieldExpression><![CDATA[$F{jugador_nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="617" y="0" width="100" height="20" uuid="cb89b682-cff7-4a83-8697-7ec7ae1036d7"/>
+				<textFieldExpression><![CDATA[$F{transferencia_equipo_transferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="0" width="100" height="20" uuid="f49d6145-db18-4639-bb63-deefc2e86eb1"/>
+				<textFieldExpression><![CDATA[$F{jugador_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="517" y="0" width="100" height="20" uuid="75f827b7-80b6-46ea-b03c-8a0ad7c54f81"/>
+				<textFieldExpression><![CDATA[$F{jugador_posicion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="41ab335e-f67b-4381-864e-8dcda1ae4879"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="88eeb2c7-c36e-47f9-bf72-8b95675613e9"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="1f5fb41a-4b9a-454a-a518-bd16f71ac288"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
